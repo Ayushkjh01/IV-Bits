@@ -1,0 +1,221 @@
+:root {
+  /* Color Palette - Tech Startup */
+  --deep-blue: #0b1c3a;
+  --deep-blue-hover: #132a52;
+  --deep-blue-light: #1e3a8a;
+  --slate-grey: #64748b;
+  --slate-grey-light: #94a3b8;
+  --slate-grey-dark: #334155;
+  --slate-grey-bg: #f1f5f9;
+  --mint-green: #10b981;
+  --mint-green-light: #d1fae5;
+  --mint-green-hover: #059669;
+  --white: #ffffff;
+  --black: #020617;
+  
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  
+  /* Borders & Shadows */
+  --border-color: #e2e8f0;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  
+  /* Typography */
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  
+  /* Layout */
+  --sidebar-width: 250px;
+  --nav-height: 60px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-primary);
+  color: var(--black);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+/* Typography styles */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--deep-blue);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+h2 { font-size: 2rem; margin-bottom: 1rem; }
+h3 { font-size: 1.5rem; margin-bottom: 0.75rem; }
+
+p {
+  color: var(--slate-grey-dark);
+  margin-bottom: 1rem;
+}
+
+/* Utilities */
+.text-mint { color: var(--mint-green); }
+.text-blue { color: var(--deep-blue); }
+.text-slate { color: var(--slate-grey); }
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  gap: 0.5rem;
+}
+
+.btn-primary {
+  background-color: var(--deep-blue);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background-color: var(--deep-blue-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-success {
+  background-color: var(--mint-green);
+  color: var(--white);
+}
+
+.btn-success:hover {
+  background-color: var(--mint-green-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+  border: 1px solid var(--border-color);
+  background-color: var(--white);
+  color: var(--deep-blue);
+}
+
+.btn-outline:hover {
+  background-color: var(--slate-grey-bg);
+}
+
+/* Layout Classes */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  margin-left: var(--sidebar-width);
+  transition: margin-left 0.3s ease;
+}
+
+/* Mobile Breakpoint */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+  
+  .main-content {
+    margin-left: 0;
+    padding: 1rem;
+    padding-bottom: calc(var(--nav-height) + 1rem); /* Space for bottom nav */
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.badge-mint {
+  background-color: var(--mint-green-light);
+  color: var(--mint-green-hover);
+}
+
+.badge-blue {
+  background-color: var(--slate-grey-bg);
+  color: var(--deep-blue);
+}
+
+/* Forms */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.input-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--deep-blue);
+  margin-bottom: 0.5rem;
+}
+
+.input-field {
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: var(--deep-blue-light);
+  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+}
