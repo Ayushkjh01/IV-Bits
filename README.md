@@ -24,19 +24,14 @@ Referease is a high-fidelity, scalable digital platform designed to connect job 
 ### Installation & Development
 
 1. **Clone the repository** (or download the folder)
-2. **Navigate to the project directory**:
-   ```bash
-   cd referral-app
-   ```
-3. **Install dependencies**:
+2. **Install dependencies**:
    ```bash
    npm install
-   ```
-4. **Start the Frontend**:
+3. **Start the Frontend**:
    ```bash
    npm run dev
    ```
-5. **Start the Backend (Optional for mock APIs)**:
+4. **Start the Backend (Optional for mock APIs)**:
    ```bash
    node server.js
    ```
